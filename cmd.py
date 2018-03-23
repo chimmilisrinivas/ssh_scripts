@@ -23,6 +23,13 @@ try:
             print("command executed succesfully")
     else:
             print("command not executed successfully")
+ 
+except paramiko.SSHException as e:
+        print("Problem occurred while running command")
+        raise e
+return stdout
+
+
 
 finally:
     client.close()
